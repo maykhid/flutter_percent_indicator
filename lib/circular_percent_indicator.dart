@@ -3,7 +3,7 @@
 import 'package:flutter/material.dart';
 import 'dart:math' as math;
 
-enum ArcType { HALF, FULL, FULL_REVERSED }
+enum ArcType { HALF, FULL, FULL_REVERSED, CUSTOM }
 
 enum CircularStrokeCap { butt, round, square }
 
@@ -343,6 +343,9 @@ _ArcAngles _getStartAngleFixedMargin(ArcType arcType) {
   } else if (arcType == ArcType.FULL) {
     fixedStartAngle = 220;
     startAngleFixedMargin = 172 / fixedStartAngle;
+  } else if (arcType == ArcType.CUSTOM){
+    fixedStartAngle = 245;
+    startAngleFixedMargin = 158 / fixedStartAngle;
   } else {
     fixedStartAngle = 270;
     startAngleFixedMargin = 135 / fixedStartAngle;
